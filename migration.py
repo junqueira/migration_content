@@ -4,6 +4,7 @@ from sqlalchemy import String
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
+from tests import *
 from datetime import datetime
 
 Base = declarative_base()
@@ -30,7 +31,7 @@ class Content(Base):
         Session = sessionmaker()
         Session.configure(bind=engine)
         Base.metadata.create_all(engine)
-        for content in test_migration.content:
+        for content in contents:
             session = Session()
             content = Content(
                                 id= content['id'],

@@ -1,6 +1,6 @@
 from datetime import datetime
 
-content = [
+contents = [
             {
                 'id': 1,
                 'titulo': 'Titulo',
